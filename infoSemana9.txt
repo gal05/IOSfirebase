@@ -1,0 +1,9 @@
+VERSION DE XCODE
+Xcode 9.2
+Build version 9C40b
+
+VERSION DEL SISTEMA
+macOS Sierra Versión 10.12.6
+
+VERSION DE POD EN EL SISTEMA
+1.5.2
