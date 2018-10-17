@@ -7,5 +7,6 @@ target 'IOSfirebase' do
 
   # Pods for IOSfirebase
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
 end
