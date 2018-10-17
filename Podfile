@@ -9,4 +9,7 @@ target 'IOSfirebase' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
 
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
+
 end
