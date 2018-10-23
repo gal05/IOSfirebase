@@ -12,23 +12,35 @@ import FirebaseDatabase
 class ViewController: UIViewController {
     var databaseRefer:DatabaseReference!
     var databaseHandle:DatabaseHandle!
+    
+    var dataToStore=[String:String]()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dataToStore["codigo"] = "107907"
+        dataToStore["password"] = "123"
+
         
-        /*
-        // Do any additional setup after loading the view, typically from a nib.
-        let ref = Database.database().reference()
-        ref.child("alguien/nosoyoy").setValue("Algo")
-        //ref.childByAutoId().setValue(["nombre":"Justin","apellido":"Guerra Guerra"])
-        */
+        
         databaseRefer = Database.database().reference()
-        databaseRefer.child("name").childByAutoId().setValue("Visa1");
+       
         
-        databaseHandle = databaseRefer.child("name").observe(.childAdded,with:{(data) in
+        
+        
+        databaseHandle = databaseRefer.child("usuario").observe(.childAdded,with:{(data) in
             let name:String=(data.value as? String)!
             debugPrint(name)
         })
+
+            /*.observe(of: .value, whit:  {(snapshot) in
+            let value = snapshot.value as? NSDictionary;
+            let username = value?["codigo"] as? String??
+            
+        })*/
+
     }
 
     override func didReceiveMemoryWarning() {
