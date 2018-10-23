@@ -57,6 +57,10 @@
                         <color key="backgroundColor" red="0.73033092479999995" green="0.8995967023" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="txtcodigo" destination="hbh-VO-PVr" id="1k2-vb-jMU"/>
+                        <outlet property="txtpassword" destination="kGK-3Y-ssf" id="IgT-wk-rbw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

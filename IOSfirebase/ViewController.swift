@@ -14,8 +14,10 @@ class ViewController: UIViewController {
     var databaseHandle:DatabaseHandle!
     
     var dataToStore=[String:String]()
+
+    @IBOutlet weak var txtcodigo: UITextField!
     
-    
+    @IBOutlet weak var txtpassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +25,6 @@ class ViewController: UIViewController {
         dataToStore["codigo"] = "107907"
         dataToStore["password"] = "123"
 
-        
-        
         databaseRefer = Database.database().reference()
       /* let userDbRef = databaseRefer.child("usuarios").child("g")
         userDbRef.child("usuarioDetalles").setValue(dataToStore)
@@ -39,19 +39,6 @@ class ViewController: UIViewController {
             print("datos = \(password)  \(codigo)")
             
         })
-
-        
-        
-        /*databaseHandle = databaseRefer.child("usuario").observe(.childAdded,with:{(data) in
-            let name:String=(data.value as? String)!
-            debugPrint(name)
-        })*/
-
-            /*.observe(of: .value, whit:  {(snapshot) in
-            let value = snapshot.value as? NSDictionary;
-            let username = value?["codigo"] as? String??
-            
-        })*/
 
     }
 
