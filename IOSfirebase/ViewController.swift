@@ -26,14 +26,26 @@ class ViewController: UIViewController {
         
         
         databaseRefer = Database.database().reference()
-       
+      /* let userDbRef = databaseRefer.child("usuarios").child("g")
+        userDbRef.child("usuarioDetalles").setValue(dataToStore)
+        */
+        
+        databaseRefer.child("usuarios").child("g").child("usuarioDetalles").observeSingleEvent(of: .value, with: {(snapshot) in
+            let value = snapshot.value as? NSDictionary
+            
+            let codigo = value?["codigo"] as? String ?? ""
+            let password = value?["password"] as? String ?? ""
+            
+            print("datos = \(password)  \(codigo)")
+            
+        })
+
         
         
-        
-        databaseHandle = databaseRefer.child("usuario").observe(.childAdded,with:{(data) in
+        /*databaseHandle = databaseRefer.child("usuario").observe(.childAdded,with:{(data) in
             let name:String=(data.value as? String)!
             debugPrint(name)
-        })
+        })*/
 
             /*.observe(of: .value, whit:  {(snapshot) in
             let value = snapshot.value as? NSDictionary;
